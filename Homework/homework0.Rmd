@@ -1,0 +1,65 @@
+---
+title: "Homework 0"
+subtitle: "Aut 2024"
+author: "WRITE YOUR NAME HERE"
+date: "`r Sys.Date()`"
+output: pdf_document
+header-includes:
+    - \usepackage{amsmath, amssymb}
+    - \usepackage{setspace} 
+---
+\onehalfspacing
+
+* * * 
+
+### Instructions
+
+- This homework is due in Gradescope on Wednesday Oct 9 by midnight PST. There is a 15 minute grace period and submissions made during this time will not be marked as late. Any work submitted past this period is considered late.  
+
+- Please answer the following questions in the order in which they are posed. \textbf{Be sure to support your work and show your steps.}
+
+- Don't forget to (i) make a local copy of this document for your work and to (ii) knit the document frequently to make sure there are no compilation errors. 
+
+- When you are done, download the PDF file as instructed in quiz section and submit it in Gradescope. 
+
+* * *
+
+
+### Exercises 
+
+1. Semester grades (expressed as a fraction of total possible points) for a Physics for Poets class are described fairly well by the PDF
+\begin{align*}
+f(x) &= \left\{ \begin{array}{cc}
+                      6 x (1-x) & 0 < x < 1 \\
+                      0 & otherwise \end{array} \right.
+\end{align*}
+
+    Anyone earning less than 60\% must retake the class. 
+
+a. Find $p$, the probability that a randomly selected student will need to retake the class.
+
+b. Five housemates are among the students enrolled in the class. Let $X$ denote the number of these five who will need to retake the class. What is a reasonable distribution for $X$? Be sure to state the distribution fully with all inputs specified, and also give any assumptions you need to make for this distribution to be valid and comment on whether or not you think it is likely to hold in this context. 
+
+
+c. Assuming the distribution from part b holds, how many housemates are expected to fail? With what standard deviation? (You may use results without proof, but state them first)
+
+d. Consider the random variable $Y = \frac{X}{5}$. Find the expected value and standard deviation of $Y$. (Support your steps by citing any rules you use)
+
+
+2. Suppose $X \sim Unif(0,1)$. Find $E\left[ -\ln(X) \right]$ using the Law of the Unconscious Probabilist (LOTUP). 
+
+3. The time $X$ (in seconds) between two randomly selected consecutive cars in a traffic flow model is modeled by the PDF 
+$$f(x) = \frac{k}{x^4}, \ \  \ \ a \leq x < \infty$$
+   
+a. Determine the value of $k$ in terms of $a$.
+
+b. If $a=1$ what is $P(2 \leq X \leq 3)$?
+
+
+4.  The diameters of ball bearings from a particular company are normally distributed. In order to quickly determine the parameters of the normal distribution, one determines the proportion of bearings going through sieves with circular holes of different sizes. If 23% of the bearings go through a hole of diameter 4.9 mm and 59% go through a hole of diameter 5.0 mm, set up the two equations to find the mean and standard deviation of the normal distribution. You do not need to solve them  (Assume the ball bearings are spherical. )
+
+    Hint: Let $X$ denote the diameter of a randomly selected ball bearing. You are told that $X \sim Norm(\mu, \sigma)$ and that
+    $P(X \leq 4.9) = 0.23$ and $P(X \leq 5) = 0.59$. 
+    
+   
+    
