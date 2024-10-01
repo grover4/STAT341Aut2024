@@ -1,0 +1,81 @@
+---
+title: "Problem Section 1"
+date:  "Monday Oct 7 2024"
+graphics: yes
+output: pdf_document
+header-includes:
+    - \usepackage{amsmath, amssymb,diagbox}
+    - \usepackage{framed}\definecolor{shadecolor}{rgb}{0.949,0.949,0.949}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\begin{shaded}
+
+\textbf{Learning Outcomes}
+
+The problems are designed to build conceptual understanding and problem-solving skills. The emphasis is on learning to find, evaluate and build confidence. The specific tasks include: 
+
+   - Construct a table of joint probabilities and calculate marginal and conditional distributions.
+     
+   - Calculate probabilities for the trinomial experiment
+ 
+   - Work with conditional probabilities
+   
+   - Back up and support work with relevant explanations
+
+
+\end{shaded}
+
+
+* * *
+
+### Instructions
+
+- Please work in groups of three to answer the problems below. 
+
+- Each member of the group must write up their work on a separate sheet of paper. Be sure to clearly write your full name on the top as it appears in the gradebook.
+
+### Exercises 
+
+1. A fair coin is tossed four times. $X$ is the number of heads that come up on the first three tosses and $Y$ is the number of heads that come up on tosses 2, 3, 4. 
+
+   a. Fill in the cells of the table showing the joint PMF of $\langle X, Y \rangle$ 
+   
+   \begin{table}[h]
+   \centering
+   \caption{Joint PMF of $\langle X,Y \rangle$}
+   \begin{tabular}{|c|c|c|c|c|} \hline
+   \diagbox{$y$}{$x$} & 0 & 1 & 2 & 3 \\ \hline
+   0 & \hspace*{0.5in} & \hspace*{0.5in} & \hspace*{0.5in} & \hspace*{0.5in} \\ \hline 
+   1 & & & & \\  \hline 
+   2 & & & & \\ \hline
+   3 & & & & \\ \hline
+   \end{tabular}
+   \end{table}
+   
+   b. Find the marginal distribution of $X$ and also of $Y$.
+   
+   c. Find the conditional probabilities $P(X =2 | Y = 2)$ and $P(Y = 3| X = 0)$. 
+
+2. Suppose that five independent observations are
+drawn from the continuous PDF
+    $$f(t) = 2t \ \ 0 \leq t < 1$$
+Let $X$ denote the number of $t$'s that fall in the interval $0 \leq t < \frac{1}{3}$ and let $Y$ denote the number of $t$'s in the interval $\frac{1}{3} \leq t < \frac{2}{3}$. 
+
+a. Find the probability that $X=2$ and $Y = 1$. How  will you calculate this in R? Go ahead and use R to find the probability.
+
+b. Find the probability that $X=1$. How will you calculate this in R Go ahead and use R to find the probability.
+
+c. How many observations should you expect will lie in the interval $0 \leq t < \frac{1}{3}$. That is, find $E\left[X \right]$. What is the standard deviation of $X$?
+
+3. (For HW 1 problem 3)  The binomial theorem states that for real numbers $a$ and $b$ and an integer $n$:
+
+   $$(a+b)^{n} = \binom{n}{0} a^{0} b^{n} + \binom{n}{1} a^{1} b^{n-1} + \binom{n}{2} a^{2} b^{n-2} + \dots + \binom{n}{n} a^{n} b^{0}$$
+      
+      Show, using the binomial theorem, that 
+      $$\sum\limits_{x=0}^{n} \binom{n}{x} = 2^n.$$
+
+    
