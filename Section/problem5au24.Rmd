@@ -1,0 +1,70 @@
+---
+title: "Problem Section 5"
+date:  "Monday Nov 4 2024"
+graphics: yes
+output: pdf_document
+header-includes:
+    - \usepackage{amsmath, amssymb}
+    - \usepackage{framed}\definecolor{shadecolor}{rgb}{0.949,0.949,0.949}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\begin{shaded}
+
+\textbf{Learning Outcomes}
+
+The problems are designed to build conceptual understanding and problem-solving skills. The emphasis is on learning to find, evaluate and build confidence. The specific tasks include: 
+
+   - Calculate probabilities using the Central Limit Theorem.
+   
+   - Construct a confidence interval using Chebychev's inequality
+
+   - Calculate the sample size for a desired margin of error
+   
+   - Back up and support work with relevant explanations
+
+
+\end{shaded}
+
+
+* * *
+
+### Instructions
+
+- Please work in groups of three to answer the problems below. 
+
+- Each member of the group must write up their work on a separate sheet of paper. Be sure to clearly write your full name on the top as it appears in the gradebook.
+
+
+### Exercises 
+
+1. In a grocery store, 400 customers shop everyday. The number of half-gallons of nonfat milk bought by a randomly selected customer is a random variable $X$ having PMF
+\begin{align*}
+f(x) &= \left\{ \begin{array}{cc}
+                0.3 & x=0\\
+                0.5 & x=1 \\
+                0.2 & x=2 \end{array} \right.
+\end{align*}
+
+   Assume buying behaviors of different customers are independent. The grocer requests 390 half gallon containers per day from the distributor. Calculate, using the Central Limit Theorem,  the probability that, on a given day that is enough.  (Please practice defining random variables and setting up the problem mathematically first)
+   
+
+2. A manufacturer of toothpicks wonders what the mean width of a toothpick is under a new manufacturing
+method. How many toothpicks must the manufacturer measure to be at least 90% confident that the sample 
+mean is no farther from this unknown mean than 0.10 mm? Assume the conditions of the Central Limit
+Theorem are satisfied, and note that toothpicks produced under the old method had a standard deviation
+of 0.4 mm and that this is unchanged with the new process.
+
+   
+
+3. Suppose $X_1, X_2, \dots, X_n$ are independent observations from a probability distribution with (unknown) mean $\mu_0$ and (known) variance $\sigma^2_0$.  Use Chebychev's inequality to come up with a confidence interval for $\mu_0$ which has at least 95% confidence.  
+
+   Hint: For any random variable $X$ with mean $\mu$ and variance $\sigma^2$, Chebychev's inequality states that 
+$$P(|X - \mu| \geq k \sigma) \leq \frac{1}{k^2}$$
+  Apply Chebychev's inequality to the random variable $\bar{X}$. Refer to Theorem 5.1 for the mean and SD of $\bar{X}$.
+  
+  
+
