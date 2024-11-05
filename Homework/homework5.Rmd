@@ -1,0 +1,86 @@
+---
+title: "Homework 5"
+subtitle: "Autumn 2024"
+author: "WRITE YOUR NAME HERE"
+date: "`r Sys.Date()`"
+output: pdf_document
+header-includes:
+    - \usepackage{amsmath, amssymb, setspace}
+---
+\onehalfspacing
+
+* * * 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      message = F, 
+                      warning = F)
+library(tidyverse)
+library(MASS)   #for cats data
+```
+
+### Instructions
+
+- This homework is due in Gradescope on Wednesday Nov 13 by midnight PST. There is a 15 minute grace period and submissions made during this time will not be marked as late. Any work submitted past this period is considered late.  
+
+- Please answer the following questions in the order in which they are posed. 
+
+- Don't forget to (i) make a local copy this document for your work and to (ii) knit the document frequently to make sure there are no compilation errors. 
+
+- When you are done, download the PDF file as instructed in section and submit it in Gradescope. 
+
+* * *
+
+
+### Exercises 
+
+1. (Errors in estimation) Bias and variance are errors that arise in any measuring system. Bias is any systematic tendency for measurements to deviate from the true value, while variability describes a haphazard tendency for measurements to be off from the true value.  For each of the following errors, state whether it (predominantly) involves bias or variability and explain your reasoning briefly.
+
+a. Before taking off, a pilot is supposed to set the aircraft altimeter to the elevation of the airport. A pilot leaves Denver (altitude 5,280 feet) with her altimeter set to 2,500 feet, so the subsequent altitude measurements are off from the true altitude of the plane.
+
+b. An iPhone battery is supposed to provide 3.7 volts. An aftermarket supplier manufactures 5,000 replacement batteries and finds that the actual voltage provided has a mean of 3.7 V, but about half the batteries provide less than 3.7 volts and half more than 3.7 volts. 
+
+c. For data collected on car driving fatalities, a researcher claims that while many fatalities are recorded as involving alcohol, many others are missed because the deceased are not tested for alcohol consumption. 
+
+d.  Scientists studying global warming have difficulty interpreting historical temperature data because most temperature measurements were recorded in urban areas, which tend to be warmer than rural areas because of heat released by human activity.
+
+
+
+2. (Central Limit Theorem) Suppose that the time (in days) until a component fails has an exponential distribution with rate $\lambda=\frac{1}{45}$. When a component fails, it is immediately replaced by a new component. Use the Central Limit Theorem to estimate the probability that 40 components will together be sufficient to last for at least 5 years. (You may assume a year has exactly 365.25 days)
+
+   Note: You may use R to perform the calculations but be sure to set up the problem mathematically first - define the individual random variables, clearly state the distribution of their sum, show what probability you are calculating. 
+
+
+
+3. (Cats) The `cats` dataset from the **MASS** package contains data on 144 cats. The variable `Bwt` gives the body weight and `Sex` gives the sex of the cat. \footnote{You can load the data in your working Environment by typing  data(cats) in the Console. Then click on the dataset to view it in the spreadsheet viewer. Be sure to run the setup code chunk first by clicking the green Play button to attach the packages. For help on the explanations of the variables, type ?cats in the Console.}
+
+a. Calculate and interpret a 95% (large sample) confidence interval estimate for the mean body weight of male cats.
+Be sure to show the formula you are using and also any code to do the calculations as well as output. 
+
+b. Repeat part a for the female cats.
+
+c. Why do we consider male and female cats separately?
+
+
+    
+    
+    
+4. (Uniform)\footnote{In this problem you will create an interval estimate for a parameter $\theta_0$ which is in the support of a uniform distribution.} Suppose a single observation $X$ is drawn from a $Unif(0, \theta_0)$. That is, $X$ has PDF
+$$f(x) = \frac{1}{\theta_0} \ \ \ \ 0\leq x < \theta_0$$
+where $\theta_0$ is some non-negative number.
+
+    
+a. Let $0 < \alpha < 1$ be some number. Verify the probability statement 
+$$P\left( \frac{\alpha}{2} \leq  \frac{X}{\theta_0} \leq 1-\frac{\alpha}{2} \right) = 1- \alpha$$
+
+
+b. Invert the probability statement in part a to show that 
+$$\left[ \frac{2X}{2 - \alpha}, \frac{2 X}{\alpha} \right]$$
+is a 100 $(1-\alpha)$\% confidence interval estimator for $\theta_0$.
+
+    Hint:  rewrite the event inside the probability statement so that $\theta_0$ is in the interior of the inequalities.
+    
+c. Suppose we observe $x = 2.1$. Calculate a 90% confidence interval estimate for $\theta_0$.
+
+d. Is the confidence interval derived in this problem a "large sample" interval estimator for $\theta_0$? Yes or no and why or why not.
+
+   
