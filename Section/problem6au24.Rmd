@@ -33,11 +33,7 @@ The problems are designed to build conceptual understanding and problem-solving 
 
 ### Instructions
 
-- Please work in groups of three to answer the problems below. 
-
-- Each member of the group must write up their work on a separate sheet of paper. Be sure to clearly write your full name on the top as it appears in the gradebook.
-
-
+- Please submit your completed file in CANVAS
 
 ### Exercises 
 
@@ -63,7 +59,8 @@ a. First, let's calculate the observed value of the estimator $\hat{\sigma}^2_0$
 
 
 
-b. Now implement a parametric bootstrap scheme to approximate the sampling distribution of $\hat{\sigma}^2_0$. Generate $B=1,000$ bootstrapped estimates and save them in a data frame called `boot_df`. Print the first few rows to look at it. (Consult slides 9 - 13 in the slide deck 6.1 - 6.2.)
+b. Now implement a parametric bootstrap scheme to approximate the sampling distribution of $\hat{\sigma}^2_0$. Generate $B=1,000$ bootstrapped estimates and save them in a data frame called `boot_df`. For reproducibility, let's use 1234 as the random number seed. the first few rows to look at it. (Consult slides 9 - 13 in the slide deck 6.1 - 6.2.)
+
 
 
 
