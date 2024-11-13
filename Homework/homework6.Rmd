@@ -143,6 +143,8 @@ c. In this part, you will use your dataframe `airbnb_3bed` from part b. to const
     #Calculate average and sd of the B values 
 
 
+    set.seed(1141)
+    B = 1000
     ```
   
   
