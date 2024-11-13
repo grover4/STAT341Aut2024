@@ -1,0 +1,161 @@
+---
+title: "Homework 6"
+subtitle: "Autumn 2024"
+author: "WRITE YOUR NAME HERE"
+date: "`r Sys.Date()`"
+output: pdf_document
+header-includes:
+    - \usepackage{amsmath, amssymb, setspace}
+    - \usepackage{framed}\definecolor{shadecolor}{rgb}{0.949,0.949,0.949}
+---
+\onehalfspacing
+
+* * * 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, 
+                      message = F, 
+                      warning = F)
+
+library(tidyverse)
+
+```
+
+
+
+### Instructions
+
+- This homework is due in Gradescope on Wednesday Nov 20 by midnight PST. There is a 15 minute grace period and submissions made during this time will not be marked as late. Any work submitted past this period is considered late.  
+
+- Please answer the following questions in the order in which they are posed. 
+
+- Don't forget to (i) make a local copy this document for your work and to (ii) knit the document frequently to make sure there are no compilation errors. 
+
+- When you are done, download the PDF file as instructed in section and submit it in Gradescope. 
+
+* * *
+
+
+
+### Exercises 
+
+1. (Difference of two means) Using a random sample of 25 observations - $X_1,X_2,\dots,X_{25}$ -  from a  population with (unknown) mean $\mu_1$ and (known) standard deviation $\sigma_1$, a 95\% large sample confidence interval for $\mu_1$ was found to be $[1.37, 1.53]$. 
+
+   Similarly using an independent sample of 36 observations - $Y_1, Y_2, \dots, Y_{36}$ - from a population with (unknown) mean $\mu_2$ and (known) standard deviation $\sigma_2$, a 95\% large sample confidence interval for $\mu_2$ was found to be $[1.17, 1.29]$.
+
+a. Find the values for $\bar{x}$, $\bar{y}$, $\sigma_1$ and $\sigma_2$. Be sure to 
+   - write the formula for the 95\% interval estimate for a generic mean $\mu$ 
+   - explain how you will find the values for $\bar{x}$ and $\sigma$ from your generic interval
+   - then use R as a calculator to find and print the four values requested. 
+
+b. The large sample confidence interval for a population mean is based on the Central Limit Theorem which states that sample means are approximately normally distributed for large means. Specifically, 
+$$\bar{X} \approx Norm(\mu_1, \frac{\sigma_1}{\sqrt{25}}) \ \ \  \ \ \ \bar{Y} \approx Norm(\mu_2, \frac{\sigma_2}{\sqrt{36}}).$$
+This implies that $\bar{X} - \bar{Y}$ is also approximately normally distributed for large sample sizes^[since linear combination of normal random variables is also normal]. What are the mean and standard deviation of this distribution? 
+
+
+c. Use the large sample normal distribution of $\bar{X} - \bar{Y}$ you derived in part b derive a $100 ( 1-\alpha)$\% confidence interval for $\mu_1- \mu_2$. 
+
+    Hint: You need to replace the standard normal random variable $Z$ in the probability statement
+    $$1-\alpha = P\left( -z_{\alpha/2} \leq Z \leq z_{\alpha/2} \right)$$
+    with the \emph{standardized} version of $\bar{X} - \bar{Y}$ and then invert the probability.
+    
+d. Using R as a calculator, find a 90\% confidence interval for this example data. Be sure to print the interval.
+
+
+2. (Binomial probability) A sample of 83 independent realizations of an integer-valued random variable $X$ is shown below:
+\begin{table}[h]
+\centering
+\begin{tabular}{ccccccc} \\ \hline
+value & 0 & 1 & 2 & 3 & 4 & 5 \\ \hline
+frequency & 13 & 18 & 23 & 15 & 6 & 8 \\ \hline
+\end{tabular}
+\end{table}
+
+Suppose we are interested in estimating $\pi_0 = P(X \geq 2)$. Let the Bernoulli random variable $Y$ denote whether or not $X \geq 2$. Then $Y_1,Y_2,\dots,Y_{83} \overset{i.i.d.}{\sim} Bernoulli(\pi_0)$. 
+
+    Calculate a 90% large sample confidence interval for $\pi_0$. You can simply state the formula for the confidence interval and then do the calculations in a code chunk using R as a calculator. Be sure to print your interval.
+ 
+
+    
+3. (Poisson rate) Suppose $X_1,X_2,\dots,X_n \overset{i.i.d.}{\sim} Pois(\lambda_0)$ where $\lambda_0$ is the true (but unknown ) value of the rate. 
+a. What are the mean - $\mu_0$ - and variance  - $\sigma_0^2$ - for the Poisson distribution? (No proof needed)
+
+b. What does the Central Limit Theorem say about the large sample distribution of $\bar{X}$ for the Poisson model? (No proof needed, just cite any references you use)
+
+c. Write a definition like the one in "Definition 5.2" from $\S 5.4$ giving the formula for a large sample confidence interval for $\lambda_0$. (No proof needed)
+
+    \begin{shaded}
+    \textbf{Definition 5.2 (Poisson)}
+
+    \end{shaded}
+
+d. Suppose $X$, the number of students who come to class late can be modeled as a Poisson random variable with rate $\lambda_0$. The data are shown below for 12 classes in a frequency table. (For example, there were 4 classes with 0 late students). Use R to calculate a 98\% confidence interval estimate for $\lambda_0$. Be sure to print the answer.
+
+    \begin{tabular}{cccccc} 
+    number of late students & 0 & 1 & 2 & 3 & 4 \\ \hline
+    frequency &              4 & 4 & 2 & 1 & 1  \\ \hline
+    \end{tabular}
+    
+    Use R to calculate a 98\% confidence interval estimate for $\lambda_0$. Be sure to print the answer.
+    ```{r 3d}
+    #calculate 98% interval and print
+    
+    ```
+
+4. (Bootstrap airbnb) In this problem we will revisit the `airbnb` data from section 5.3 to make inference about the **MEDIAN** (weekly) rental price of ALL homes in Seattle with 3 or more bedrooms. Since we are interested in estimating the MEDIAN - let's call it $\mu_d$ - of a distribution, we will use the sample median as our estimate.  In this exercise, you will calculate a bootstrapped interval estimate for $\mu_d$.
+
+a. Read in the data from the file `listings.csv` into a dataframe called `airbnb`. Then write code to create a smaller data frame called `airbnb_3bed` which contains only the variable `weekly_price` (as a number) for all Houses with 3 or more bedrooms. End the code chunk with a `glimpse` so we can peek at the data. We do not need to see your code which is why I have set `echo = FALSE`.
+
+    Hint: The variables you will be filtering on are given below. 
+
+    - property_type: House
+    - room_type: Entire home/apt
+    - bedrooms: 3 or more 
+  
+    ```{r problem 4a, echo = F}
+    #create airbnb_3bed
+
+    # glimpse
+    ```
+
+
+b. Clearly the weekly price is missing or NA for many listings. Write code to filter out the missing values and save the result in `airbnb_3bed`. Print the number of rows in the resulting dataframe. Also calculate and print the median of `weekly_price`. This is our observed sample estimate for $\mu_d$
+
+
+    ```{r problem 4b}
+    #filter to remove missing values of weekly_price 
+
+    
+
+    ```
+
+
+c. In this part, you will use your dataframe `airbnb_3bed` from part b. to construct a 95% (non-parametric) bootstrap percentile interval estimate for $\mu_{50}$ - the median price of all House rentals in Seattle in 2018 with 3 or more bedrooms. 
+
+    We are only grading this for accuracy of the numbers reported in the table below.  
+
+   
+    ```{r problem4c}
+
+    #Generate sample of n = nrow(airbnb_3bed) from airbnb_3bed dataframe
+    #with replacement
+    #Calculate m_50_hat = median(weekly_price) from each sample.
+    #Repeat B times
+    #Calculate average and sd of the B values 
+
+
+    ```
+  
+  
+  
+\begin{table}[h]
+\centering
+\caption{Bootstrapping Results (rounded to 3 decimal places) for estimating $\mu_{50}$ }
+\begin{tabular}{|p{4in}|p{1in}| } \hline
+Average of bootstrapped estimates of $\mu_{50}$ &  \\
+S.D. of bootstrapped estimates of $\mu_{50}$ & \\
+Bootstrap estimate of bias in the median as an estimator & \\
+Bias-corrected sample estimate of $\mu_{50}$ & \\
+Lower end point of 95\% bootstrap interval for $\mu_{50}$ & \\
+Upper end point of 95\% bootstrap interval for $\mu_{50}$ & \\ \hline
+\end{tabular}
+\end{table}
