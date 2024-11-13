@@ -70,7 +70,7 @@ frequency & 13 & 18 & 23 & 15 & 6 & 8 \\ \hline
 \end{tabular}
 \end{table}
 
-Suppose we are interested in estimating $\pi_0 = P(X \geq 2)$. Let the Bernoulli random variable $Y$ denote whether or not $X \geq 2$. Then $Y_1,Y_2,\dots,Y_{83} \overset{i.i.d.}{\sim} Bernoulli(\pi_0)$. 
+    Suppose we are interested in estimating $\pi_0 = P(X \geq 2)$. Let the Bernoulli random variable $Y$ denote whether or not $X \geq 2$. Then $Y_1,Y_2,\dots,Y_{83} \overset{i.i.d.}{\sim} Bernoulli(\pi_0)$. 
 
     Calculate a 90% large sample confidence interval for $\pi_0$. You can simply state the formula for the confidence interval and then do the calculations in a code chunk using R as a calculator. Be sure to print your interval.
  
