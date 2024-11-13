@@ -129,7 +129,7 @@ b. Clearly the weekly price is missing or NA for many listings. Write code to fi
     ```
 
 
-c. In this part, you will use your dataframe `airbnb_3bed` from part b. to construct a 95% (non-parametric) bootstrap percentile interval estimate for $\mu_{50}$ - the median price of all House rentals in Seattle in 2018 with 3 or more bedrooms. 
+c. In this part, you will use your dataframe `airbnb_3bed` from part b. to construct a 95% (non-parametric) bootstrap percentile interval estimate for $\mu_{50}$ - the median weekly price of ALL House rentals in Seattle in 2018 with 3 or more bedrooms. 
 
     We are only grading this for accuracy of the numbers reported in the table below.  
 
