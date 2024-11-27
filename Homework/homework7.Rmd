@@ -78,13 +78,13 @@ a. Re-state the null and alternative hypothesis from problem 2 in terms of claim
 
     Hint: $\pi_0 = P(Y < 0) = P( Z < -\mu_0)$ where $Z \sim Norm(0,1)$. So for the null hypothesis, you want to find the value of $\mu_0$ -call it $\mu_0^{null}$ - that will make $\pi_0 = 0.4$. (Think carefully about whether the alternative is of the form $\mu_0 > \mu_0^{null}$ or of the form $\mu_0 < \mu_0^{null}$)
     
-b. A reasonable test statistic in this problem is $\bar{Y} = \frac{1}{19} \sum\limits_{i=1}^{19}(Y_1+Y_2+\dots+Y_{19})$.  Write the sampling distribution of $\bar{Y}$? Be sure to give a brief justification. Also state the values of any parameters (if known).
+b. A reasonable test statistic in this problem is $\bar{Y} = \frac{1}{19} \sum\limits_{i=1}^{19}Y_i$.  Write the sampling distribution of $\bar{Y}$? Be sure to give a brief justification. Also state the values of any parameters (if known).
 
-c. We will reject the null hypothesis if the $\mbox{P-value} \leq 0.05$. For what values of $y_{obs}$ will you reject the null hypothesis? State the form of the P-value first. Support your answer showing code/output as necessary.
+c. We will reject the null hypothesis if the $\mbox{P-value} \leq 0.05$. For what values of $\bar{y}_{obs}$ will you reject the null hypothesis? State the form of the P-value first. Support your answer showing code/output as necessary.
 
-d. Calculate the probability of committing a Type I error if you use the decision rule from part b. 
+d. Calculate the probability of committing a Type I error if you use the decision rule from part c. 
 
-e. Suppose in fact $H_0$ is false and $\pi_0 = 0.2$. Calculate the probability of committing a Type II error if you use the decision rule from part b. Support your answer showing code/output as necessary. 
+e. Suppose in fact $H_0$ is false and $\pi_0 = 0.2$. Calculate the probability of committing a Type II error if you use the decision rule from part c. Support your answer showing code/output as necessary. 
    
 
    
